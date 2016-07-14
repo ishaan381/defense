@@ -1,8 +1,9 @@
-'use strict'; 
+'use strict';
 
 var router = require('express').Router();
 var sessionMiddleware = require('express-session');
 var passport = require('passport');
+var secrets = require('../../secrets')
 
 var User = require('../api/users/user.model');
 
@@ -18,9 +19,7 @@ router.use(function (req, res, next) {
   });
 });
 
-router.use(sessionMiddleware({
-  secret: 'tongiscool'
-}));
+router.use(sessionMiddleware({secret: secrets.session.secret}));
 
 /*
 // session middleware sketch (what's sort of happening)
