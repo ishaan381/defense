@@ -2,7 +2,7 @@
 
 var Sequelize = require('sequelize');
 
-var databaseURI = require('./secrets').databaseURI;
+var databaseURI = require('../secrets').databaseURI;
 
 var db = new Sequelize(databaseURI, {
   define: {
